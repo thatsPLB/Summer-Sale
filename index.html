@@ -9,7 +9,7 @@
 <!-- banner -->
 <body>
     <div class ="bg-amber-50 w-full lg:h-[550px] ">
-        <div class="elative w-full">
+        <div class=" w-full">
             <div class="flex flex-col text-center lg:flex-row gap-20 p-4 lg:p-24">
                 <div class="space-y-7 flex-1 mt-50px text-2xl font-semibold">
                     <h1>---SALE FEVER---</h1>
@@ -29,12 +29,12 @@
       <!--kitchenware  -->
       <h2 class="text-4xl ml-20 font-bold">Kitchenware</h2>
       <section  class="grid ml-20 gap-10 xl:grid-cols-4 py-10 w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <div id="prod1-click"class="w-96 bg-base-100  py-10 px-8 text-center border-2 rounded-lg shadow-xl">
+          <div id="prod1-click" class="w-96 bg-base-100  py-10 px-8 text-center border-2 rounded-lg shadow-xl">
             <figure class="px-10 pt-10 bg-slate-200 ">
               <img src="/images/prod1.png" alt="" class="rounded-xl m-auto" />
             </figure>
             <div class="items-center text-center flex flex-col">
-              <div class="items-center flex space-x-1 mt-2">
+              <div class="items-center flex space-x-1 mt-2 ">
                 <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                 </svg>
@@ -112,6 +112,7 @@
                 <p id="jani-na-3">39.00 TK</p>
               </div>
             </div>
+            
           </section>
       </section>
       <!-- Sportswear -->
@@ -204,16 +205,37 @@
           <!-- cupon section -->
           <section>
             <div>
+              <div>
               <p class="ml-5">Have coupon?</p>
-              <input id="enable-done" type="text" class="border ml-4 text-s py-1 px-3" placeholder="Coupon code" name="" id="triangle-height">
-              <button class=" bg-pink-500 rounded-lg" id="btn-enable" disabled>APPLY</button>
-              <p class="ml-5">Total Price :</p>
-              <p class="ml-5">Discount :</p>
-              <p class="ml-5">Total :</p>
-              <button class="btn bg-pink-500 w-full  text-s text-white rounded-lg">Make Purchase</button>
+              <input id="enable-done" type="text" class="border ml-4 text-s py-1" placeholder="Coupon code" name="" id="triangle-height">
+              <button  class="bg-pink-500 disabled:bg-gray-500 rounded-lg" id="btn-enable" onclick="coupon()" disabled>APPLY</button>
+              <!-- <button onclick="coupon()" id="btn-enable">hi</button> -->
+              </div>
+              <div class="">
+                <ol class="list-decimal list-inside" id="productol">
+                  <li>Sample Product</li>
+                </ol>
+                <p id="total-price" class="ml-5">Total Price : <span id="tprice">00</span>Tk</p>
+                <p id="discount" class="ml-5">Discount :</p>
+                <p id="total" class="ml-5">Total :</p>
+                <!-- <button onclick="my_modal_1.showModal()" class="btn text-s text-white rounded-lg" style="background-color: gray;" id="makepur" disabled>Make Purchase</button> -->
+                <button class="btn text-s bg-pink-500 text-white rounded-lg" id="makepur" onclick="my_modal_1.showModal()" disabled>Make Purchase</button>
+                <dialog id="my_modal_1" class="modal">
+                  <form method="dialog" class="modal-box">
+                    <div class="flex flex-col justify-center items-center">
+                      <img src="images/congo.png" alt="">
+                      <div>
+                        <button>GO Home</button>
+                      </div>
+                    </div>
+                  </form>
+                </dialog>
+                
+              </div>
           </div>
         </section>
       </section>
+      
     </main>
     <script src="js/assignment.js"></script>
 </body>

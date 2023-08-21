@@ -1,36 +1,96 @@
-document.getElementById('prod1-click').addEventListener('click',function(){
-    console.log('shhs')
-    const janiNaField = document.getElementById('jani-na');
-    const janiNa = janiNaField.innerText;
-    console.log(janiNa)
-})
-document.getElementById('prod2-click').addEventListener('click',function(){
-    console.log('shhs')
-    const janiNaField2 = document.getElementById('jani-na-2');
-    const janiNa2 = janiNaField2.innerText;
-    console.log(janiNa2)
-})
-document.getElementById('prod3-click').addEventListener('click',function(){
-    console.log('shhs')
-    const janiNaField3 = document.getElementById('jani-na-3');
-    const janiNa3 = janiNaField3.innerText;
-    console.log(janiNa3)
-})
-document.getElementById('prod4-click').addEventListener('click',function(){
-    console.log('shhs')
-    const janiNaField4 = document.getElementById('jani-na-4');
-    const janiNa4 = janiNaField4.innerText;
-    console.log(janiNa4)
-})
-document.getElementById('prod5-click').addEventListener('click',function(){
-    console.log('shhs')
-    const janiNaField5 = document.getElementById('jani-na-5');
-    const janiNa5 = janiNaField5.innerText;
-    console.log(janiNa5)
-})
-document.getElementById('prod6-click').addEventListener('click',function(){
-    console.log('shhs')
-    const janiNaField6 = document.getElementById('jani-na-6');
-    const janiNa6 = janiNaField6.innerText;
-    console.log(janiNa6)
-})
+const addproductname = (name) => {
+    let productList = document.getElementById("productol");
+    let list = document.createElement("li");
+    list.innerHTML = `${name}`;
+    productList.appendChild(list);
+  };
+  
+  // document.getElementById('enable-done').addEventListener('keyup',function(event){
+  //     const text = event.target.value;
+  //     console.log(text)
+  
+  //     if(text === 'SELL200'){
+  //         const text = text-(text/100)*20;
+  //         document.getElementById('tPrice').innerText = text
+  //     }
+  //     else{
+  
+  //     }
+  
+  // })
+  let candis = true;
+  const coupon = () => {
+    let text = document.getElementById("enable-done").value;
+    if (text === "SELL200" && candis === true) {
+      let price = document.getElementById("tprice").innerText;
+      const distext = price - (price / 100) * 20;
+      document.getElementById("tprice").innerText = distext;
+      candis = false;
+    }
+  };
+  
+  const btnEnable = (val) => {
+    if (val > 0) {
+      document.getElementById("makepur").removeAttribute("disabled");
+    } else {
+      document.getElementById("makepur").setAttribute("disabled", true);
+    }
+  
+    if (val >= 200) {
+      document.getElementById("btn-enable").removeAttribute("disabled");
+    } else {
+      document.getElementById("btn-enable").setAttribute("disabled", true);
+    }
+  };
+  
+  const purchase = () => {
+      // console.log("hi")
+  }
+  document.getElementById("prod1-click").addEventListener("click", () => {
+    addproductname("K. Accessories");
+    let total = document.getElementById("tprice").innerText;
+    let tprice = (39 + +total).toFixed(2);
+    console.log(tprice);
+    btnEnable(tprice);
+    document.getElementById("tprice").innerHTML = tprice;
+  });
+  document.getElementById("prod2-click").addEventListener("click", () => {
+    addproductname("K. Accessories");
+    let total = document.getElementById("tprice").innerText;
+    let tprice = (25 + +total).toFixed(2);
+    console.log(tprice);
+    btnEnable(tprice);
+    document.getElementById("tprice").innerHTML = tprice;
+  });
+  document.getElementById("prod3-click").addEventListener("click", () => {
+    addproductname("Home cooker");
+    let total = document.getElementById("tprice").innerText;
+    let tprice = (39 + +total).toFixed(2);
+    console.log(tprice);
+    btnEnable(tprice);
+    document.getElementById("tprice").innerHTML = tprice;
+  });
+  document.getElementById("prod4-click").addEventListener("click", () => {
+    addproductname("Sports back cap");
+    let total = document.getElementById("tprice").innerText;
+    let tprice = (49 + +total).toFixed(2);
+    console.log(tprice);
+    btnEnable(tprice);
+    document.getElementById("tprice").innerHTML = tprice;
+  });
+  document.getElementById("prod5-click").addEventListener("click", () => {
+    addproductname("Full Jersey Set");
+    let total = document.getElementById("tprice").innerText;
+    let tprice = (69 + +total).toFixed(2);
+    console.log(tprice);
+    btnEnable(tprice);
+    document.getElementById("tprice").innerHTML = tprice;
+  });
+  document.getElementById("prod6-click").addEventListener("click", () => {
+    addproductname("Sports cates");
+    let total = document.getElementById("tprice").innerText;
+    let tprice = (159 + +total).toFixed(2);
+    console.log(tprice);
+    btnEnable(tprice);
+    document.getElementById("tprice").innerHTML = tprice;
+  });
